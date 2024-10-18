@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.mainContent {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.completed {
+  background-color: rgb(136, 243, 136);
+}
+
+.standard {
+  background-color: white;
+}

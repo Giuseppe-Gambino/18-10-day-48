@@ -1,0 +1,43 @@
+<section class="content mb-4">
+  <!-- Qui inserisci il contenuto della tua pagina -->
+  <h1>Good Morning, Michele!👋</h1>
+  <h4 class="text-secondary">These are today's tasks.</h4>
+</section>
+<section>
+  <form class="d-flex">
+    <input
+      type="text"
+      name="searchbar"
+      [(ngModel)]="nameForm"
+      placeholder="Enter your name here"
+      class="flex-grow-1 rounded-2 p-2"
+    />
+    <button (click)="getByName()" class="btn btn-primary ms-2">Invia</button>
+  </form>
+
+  <div class="container mt-3 p-0 mainContent">
+    <ul class="m-0 p-0">
+      <li
+        *ngFor="let singleTask of tasksArr"
+        class="d-flex align-items-center justify-content-between mt-2 p-2 rounded"
+        [ngClass]="{
+          completed: singleTask.completed,
+          standard: !singleTask.completed
+        }"
+      >
+        <!-- task tilte -->
+        <div>
+          <input
+            (click)="singleTask.completed = !singleTask.completed"
+            type="checkbox"
+            class="form-check-input me-2 input"
+            [checked]="singleTask.completed"
+          />
+          <label>{{ singleTask.todo }}</label>
+        </div>
+        <!-- competenza di -->
+        <div class="mx-2">{{ singleTask.userName }}</div>
+      </li>
+    </ul>
+  </div>
+</section>
